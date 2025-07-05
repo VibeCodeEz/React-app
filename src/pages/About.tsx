@@ -18,19 +18,19 @@ const About = () => {
 
   const experiences = [
     {
-      year: '2024 - Present',
+      year: '2025 - Present',
       title: t('about.exp1Title'),
       company: t('about.exp1Company'),
       description: t('about.exp1Desc')
     },
     {
-      year: '2023 - 2024',
+      year: '2023  - 2025',
       title: t('about.exp2Title'),
       company: t('about.exp2Company'),
       description: t('about.exp2Desc')
     },
     {
-      year: '2022 - 2023',
+      year: '2025',
       title: t('about.exp3Title'),
       company: t('about.exp3Company'),
       description: t('about.exp3Desc')
