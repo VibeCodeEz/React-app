@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Morabe-Portfolio-react/', // Updated for your new repository
+  base: process.env.NETLIFY ? '/' : '/Morabe-Portfolio-react/',
 })
