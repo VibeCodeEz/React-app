@@ -6,7 +6,7 @@ import ThemePicker from './ThemePicker'
 import { useTranslation } from 'react-i18next'
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation() // Removed unused 't' variable
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
 
