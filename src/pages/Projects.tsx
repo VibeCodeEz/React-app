@@ -11,6 +11,17 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: 'MovieFlix',
+      description: t('projects.movieflixDesc'),
+      image: '🎬',
+      category: 'frontend',
+      technologies: ['React', 'TypeScript', 'OMDB API', 'Vite', 'Netlify'],
+      github: 'https://github.com/VibeCodeEz/second-react-app-movieflix',
+      live: 'https://ez-movieflix.netlify.app/',
+      featured: true
+    },
+    {
+      id: 2,
       title: 'Weather Web App',
       description: t('projects.weatherDesc'),
       image: '🌤️',
@@ -21,7 +32,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 2,
+      id: 3,
       title: 'Scientific Calculator',
       description: t('projects.calcDesc'),
       image: '🧮',
@@ -29,10 +40,10 @@ const Projects = () => {
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
       github: 'https://github.com/VibeCodeEz/calculator',
       live: 'https://calculatormorabe.netlify.app/',
-      featured: true
+      featured: false
     },
     {
-      id: 3,
+      id: 4,
       title: 'Portfolio Website',
       description: t('projects.portfolioDesc'),
       image: '🎨',

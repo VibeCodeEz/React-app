@@ -52,7 +52,8 @@ const resources = {
         noProjects: "No projects found for the selected category.",
         weatherDesc: "Interactive weather application using OpenWeatherMap API with real-time weather data, location search, and responsive design.",
         calcDesc: "Advanced calculator with dual themes and scientific operations including trigonometric functions, logarithms, and memory functions.",
-        portfolioDesc: "Professional portfolio website built while learning React as a beginner. Features modern design, smooth animations, and responsive layout."
+        portfolioDesc: "Professional portfolio website built while learning React as a beginner. Features modern design, smooth animations, and responsive layout.",
+        movieflixDesc: "Modern movie search application built with React and TypeScript, featuring OMDB API integration for comprehensive movie data, search functionality, and responsive design."
       },
       contact: {
         title: "Get In Touch",
@@ -133,7 +134,8 @@ const resources = {
         noProjects: "Walang nahanap na proyekto para sa napiling kategorya.",
         weatherDesc: "Interactive na weather app gamit ang OpenWeatherMap API na may real-time na datos, paghahanap ng lokasyon, at responsive na disenyo.",
         calcDesc: "Advanced na calculator na may dual themes at scientific operations tulad ng trigonometric functions, logarithms, at memory functions.",
-        portfolioDesc: "Propesyonal na portfolio website na ginawa habang nag-aaral ng React bilang baguhan. May modernong disenyo, smooth animations, at responsive layout."
+        portfolioDesc: "Propesyonal na portfolio website na ginawa habang nag-aaral ng React bilang baguhan. May modernong disenyo, smooth animations, at responsive layout.",
+        movieflixDesc: "Modernong movie search application na ginawa gamit ang React at TypeScript, may OMDB API integration para sa comprehensive movie data, search functionality, at responsive design."
       },
       contact: {
         title: "Makipag-ugnayan",

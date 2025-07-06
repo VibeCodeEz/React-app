@@ -13,6 +13,8 @@ const themes = [
       '--text-secondary': '#64748b',
       '--text-light': '#94a3b8',
       '--border-color': '#e2e8f0',
+      '--shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+      '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
     }
   },
   {
@@ -27,6 +29,8 @@ const themes = [
       '--text-secondary': '#cbd5e1',
       '--text-light': '#64748b',
       '--border-color': '#334155',
+      '--shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.3)',
+      '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
     }
   },
   {
@@ -41,6 +45,24 @@ const themes = [
       '--text-secondary': '#047857',
       '--text-light': '#6ee7b7',
       '--border-color': '#a7f3d0',
+      '--shadow': '0 4px 6px -1px rgba(16, 185, 129, 0.1)',
+      '--shadow-lg': '0 10px 15px -3px rgba(16, 185, 129, 0.1)',
+    }
+  },
+  {
+    name: 'Emerald Dark',
+    key: 'emerald-dark',
+    colors: {
+      '--primary-color': '#10b981',
+      '--primary-dark': '#047857',
+      '--secondary-color': '#064e3b',
+      '--background': '#022c22',
+      '--text-primary': '#d1fae5',
+      '--text-secondary': '#6ee7b7',
+      '--text-light': '#34d399',
+      '--border-color': '#065f46',
+      '--shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.3)',
+      '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
     }
   },
   {
@@ -55,6 +77,24 @@ const themes = [
       '--text-secondary': '#be123c',
       '--text-light': '#fda4af',
       '--border-color': '#fecdd3',
+      '--shadow': '0 4px 6px -1px rgba(244, 63, 94, 0.1)',
+      '--shadow-lg': '0 10px 15px -3px rgba(244, 63, 94, 0.1)',
+    }
+  },
+  {
+    name: 'Rose Dark',
+    key: 'rose-dark',
+    colors: {
+      '--primary-color': '#f43f5e',
+      '--primary-dark': '#be123c',
+      '--secondary-color': '#4c0519',
+      '--background': '#1f0f1f',
+      '--text-primary': '#fce7f3',
+      '--text-secondary': '#fda4af',
+      '--text-light': '#fb7185',
+      '--border-color': '#881337',
+      '--shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.3)',
+      '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
     }
   },
   {
@@ -69,15 +109,80 @@ const themes = [
       '--text-secondary': '#0369a1',
       '--text-light': '#7dd3fc',
       '--border-color': '#bae6fd',
+      '--shadow': '0 4px 6px -1px rgba(14, 165, 233, 0.1)',
+      '--shadow-lg': '0 10px 15px -3px rgba(14, 165, 233, 0.1)',
+    }
+  },
+  {
+    name: 'Sky Dark',
+    key: 'sky-dark',
+    colors: {
+      '--primary-color': '#0ea5e9',
+      '--primary-dark': '#0369a1',
+      '--secondary-color': '#0c4a6e',
+      '--background': '#082f49',
+      '--text-primary': '#e0f2fe',
+      '--text-secondary': '#7dd3fc',
+      '--text-light': '#38bdf8',
+      '--border-color': '#0e7490',
+      '--shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.3)',
+      '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
+    }
+  },
+  {
+    name: 'Purple',
+    key: 'purple',
+    colors: {
+      '--primary-color': '#8b5cf6',
+      '--primary-dark': '#7c3aed',
+      '--secondary-color': '#f3e8ff',
+      '--background': '#faf5ff',
+      '--text-primary': '#581c87',
+      '--text-secondary': '#7c3aed',
+      '--text-light': '#c4b5fd',
+      '--border-color': '#ddd6fe',
+      '--shadow': '0 4px 6px -1px rgba(139, 92, 246, 0.1)',
+      '--shadow-lg': '0 10px 15px -3px rgba(139, 92, 246, 0.1)',
+    }
+  },
+  {
+    name: 'Purple Dark',
+    key: 'purple-dark',
+    colors: {
+      '--primary-color': '#8b5cf6',
+      '--primary-dark': '#7c3aed',
+      '--secondary-color': '#2e1065',
+      '--background': '#1e1b4b',
+      '--text-primary': '#f3e8ff',
+      '--text-secondary': '#c4b5fd',
+      '--text-light': '#a78bfa',
+      '--border-color': '#5b21b6',
+      '--shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.3)',
+      '--shadow-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
     }
   }
 ]
 
 function applyTheme(themeKey: string) {
   const theme = themes.find(t => t.key === themeKey) || themes[0]
+  const root = document.documentElement
+  
+  // Apply color variables
   Object.entries(theme.colors).forEach(([key, value]) => {
-    document.documentElement.style.setProperty(key, value)
+    root.style.setProperty(key, value)
   })
+  
+  // Set theme attribute for CSS targeting
+  root.setAttribute('data-theme', themeKey)
+  
+  // Handle dark mode class for backward compatibility
+  if (themeKey.includes('dark')) {
+    root.classList.add('dark')
+  } else {
+    root.classList.remove('dark')
+  }
+  
+  localStorage.setItem('theme', themeKey)
 }
 
 const ThemePicker = () => {
@@ -85,8 +190,12 @@ const ThemePicker = () => {
 
   useEffect(() => {
     applyTheme(selected)
-    localStorage.setItem('theme', selected)
   }, [selected])
+
+  const handleThemeChange = (themeKey: string) => {
+    setSelected(themeKey)
+    applyTheme(themeKey)
+  }
 
   return (
     <div className="theme-picker" role="radiogroup" aria-label="Theme picker">
@@ -98,10 +207,13 @@ const ThemePicker = () => {
           aria-label={theme.name}
           tabIndex={0}
           role="radio"
-          style={{ background: theme.colors['--primary-color'] }}
-          onClick={() => setSelected(theme.key)}
+          style={{ 
+            background: theme.colors['--primary-color'],
+            border: `2px solid ${theme.colors['--border-color']}`
+          }}
+          onClick={() => handleThemeChange(theme.key)}
           onKeyDown={e => {
-            if (e.key === 'Enter' || e.key === ' ') setSelected(theme.key)
+            if (e.key === 'Enter' || e.key === ' ') handleThemeChange(theme.key)
           }}
         >
           {selected === theme.key && (

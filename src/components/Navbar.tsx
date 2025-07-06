@@ -6,7 +6,7 @@ import ThemePicker from './ThemePicker'
 import { useTranslation } from 'react-i18next'
 
 const Navbar = () => {
-  const { i18n } = useTranslation() // Removed unused 't' variable
+  const { i18n } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
 
@@ -35,11 +35,13 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <ThemeToggle />
         </div>
 
         <div className="nav-actions">
-          <ThemePicker />
+          <div className="nav-theme-controls">
+            <ThemeToggle />
+            <ThemePicker />
+          </div>
           <select
             aria-label="Select language"
             onChange={e => i18n.changeLanguage(e.target.value)}
