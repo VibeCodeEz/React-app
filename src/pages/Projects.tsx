@@ -24,6 +24,18 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: 'The Wicked Daze Clothing',
+      description: 'A modern, responsive e-commerce website built for "The Wicked Daze Clothing" brand using React, TypeScript, and Vite. Features include responsive design, dark/light theme toggle, interactive product gallery, shopping cart system, size guide integration, and smooth navigation with auto-hiding navbar.',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80',
+      imageAlt: 'The Wicked Daze Clothing - E-commerce Website',
+      category: 'frontend',
+      technologies: ['React 19', 'TypeScript', 'Vite', 'CSS3', 'E-commerce', 'Responsive Design'],
+      github: 'https://github.com/VibeCodeEz/SHOP-WICKED',
+      live: 'https://shop-thewickeddazeclothing.netlify.app/',
+      featured: true
+    },
+    {
+      id: 3,
       title: 'Weather Web App',
       description: t('projects.weatherDesc'),
       image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop&crop=center',
@@ -35,7 +47,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 3,
+      id: 4,
       title: 'Scientific Calculator',
       description: t('projects.calcDesc'),
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&crop=center',
@@ -47,7 +59,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 4,
+      id: 5,
       title: 'Portfolio Website',
       description: t('projects.portfolioDesc'),
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&crop=center',

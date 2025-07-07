@@ -7,7 +7,7 @@ const urlsToCache = [
   '/src/App.css',
   '/src/index.css',
   '/src/assets/react.svg',
-  '/vite.svg',
+  '/logo.jpg',
   '/Mr.Morabe CV.pdf'
 ]
 
@@ -82,8 +82,8 @@ function doBackgroundSync() {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data ? event.data.text() : 'New update available!',
-    icon: '/vite.svg',
-    badge: '/vite.svg',
+    icon: '/logo.jpg',
+    badge: '/logo.jpg',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -93,12 +93,12 @@ self.addEventListener('push', (event) => {
       {
         action: 'explore',
         title: 'View Portfolio',
-        icon: '/vite.svg'
+        icon: '/logo.jpg'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/vite.svg'
+        icon: '/logo.jpg'
       }
     ]
   }

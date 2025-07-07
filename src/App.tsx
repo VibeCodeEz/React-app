@@ -7,6 +7,7 @@ import AnimatedBackground from './components/AnimatedBackground'
 import PageTransition from './components/PageTransition'
 import SEO from './components/SEO'
 import Performance from './components/Performance'
+import Chatbot from './components/Chatbot'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -34,6 +35,7 @@ function App() {
           </main>
           <ScrollToTop />
           <SocialShare />
+          <Chatbot />
         </div>
       </Router>
     </HelmetProvider>

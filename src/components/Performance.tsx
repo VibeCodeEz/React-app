@@ -27,7 +27,7 @@ const Performance = ({
     // Preload critical resources
     if (enablePreload) {
       const preloadLinks = [
-        { href: '/src/assets/react.svg', as: 'image', type: 'image/svg+xml' },
+        { href: '/logo.jpg', as: 'image', type: 'image/jpeg' },
         { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap', as: 'style' }
       ]
 
