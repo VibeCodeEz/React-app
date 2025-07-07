@@ -8,6 +8,7 @@ import PageTransition from './components/PageTransition'
 import SEO from './components/SEO'
 import Performance from './components/Performance'
 import Chatbot from './components/Chatbot'
+import NewsletterSignup from './components/NewsletterSignup'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -34,6 +35,7 @@ function App() {
             </Routes>
           </main>
           <ScrollToTop />
+          <NewsletterSignup />
           <SocialShare />
           <Chatbot />
         </div>
