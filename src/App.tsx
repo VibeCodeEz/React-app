@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
 import SocialShare from './components/SocialShare'
 import AnimatedBackground from './components/AnimatedBackground'
 import PageTransition from './components/PageTransition'
+import SEO from './components/SEO'
+import Performance from './components/Performance'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -13,23 +16,27 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <AnimatedBackground />
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-            <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
-            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-          </Routes>
-        </main>
-        <ScrollToTop />
-        <SocialShare />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          <SEO />
+          <Performance />
+          <AnimatedBackground />
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+              <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+            </Routes>
+          </main>
+          <ScrollToTop />
+          <SocialShare />
+        </div>
+      </Router>
+    </HelmetProvider>
   )
 }
 

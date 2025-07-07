@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Filter } from 'lucide-react'
 import Card3D from '../components/Card3D'
+import LazyImage from '../components/LazyImage'
 import { useTranslation } from 'react-i18next'
 
 const Projects = () => {
@@ -13,7 +14,8 @@ const Projects = () => {
       id: 1,
       title: 'MovieFlix',
       description: t('projects.movieflixDesc'),
-      image: '🎬',
+      image: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=400&q=80',
+      imageAlt: 'MovieFlix - Movie search application',
       category: 'frontend',
       technologies: ['React', 'TypeScript', 'OMDB API', 'Vite', 'Netlify'],
       github: 'https://github.com/VibeCodeEz/second-react-app-movieflix',
@@ -24,7 +26,8 @@ const Projects = () => {
       id: 2,
       title: 'Weather Web App',
       description: t('projects.weatherDesc'),
-      image: '🌤️',
+      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop&crop=center',
+      imageAlt: 'Weather Web App - Real-time weather information',
       category: 'frontend',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'OpenWeatherMap API'],
       github: 'https://github.com/VibeCodeEz/weather-app',
@@ -35,7 +38,8 @@ const Projects = () => {
       id: 3,
       title: 'Scientific Calculator',
       description: t('projects.calcDesc'),
-      image: '🧮',
+      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&crop=center',
+      imageAlt: 'Scientific Calculator - Advanced calculation tool',
       category: 'frontend',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
       github: 'https://github.com/VibeCodeEz/calculator',
@@ -46,7 +50,8 @@ const Projects = () => {
       id: 4,
       title: 'Portfolio Website',
       description: t('projects.portfolioDesc'),
-      image: '🎨',
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&crop=center',
+      imageAlt: 'Portfolio Website - Personal portfolio showcase',
       category: 'frontend',
       technologies: ['React', 'TypeScript', 'Framer Motion', 'Vite'],
       github: 'https://github.com/VibeCodeEz/Port-folio',
@@ -110,7 +115,13 @@ const Projects = () => {
             <Card3D intensity={15} className="project-card-3d">
               <div className={`project-card ${project.featured ? 'featured' : ''}`}>
                 <div className="project-image">
-                  <span className="project-emoji">{project.image}</span>
+                  <LazyImage
+                    src={project.image}
+                    alt={project.imageAlt}
+                    className="project-lazy-image"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    srcSet={`${project.image} 400w, ${project.image.replace('w=400', 'w=800')} 800w, ${project.image.replace('w=400', 'w=1200')} 1200w`}
+                  />
                   {project.featured && <span className="featured-badge">{t('projects.featured')}</span>}
                 </div>
                 
