@@ -13,7 +13,16 @@ const About = () => {
     { name: 'Python', icon: <Database size={24} />, level: 75 },
     { name: 'C++', icon: <Smartphone size={24} />, level: 70 },
     { name: 'React (Learning)', icon: <Zap size={24} />, level: 30 },
-    { name: 'System Maintenance', icon: <Zap size={24} />, level: 85 }
+    { name: 'System Maintenance', icon: <Zap size={24} />, level: 85 },
+    { name: 'C# (Beginner)', icon: <Code size={24} />, level: 20 },
+    { name: 'WinForms (Beginner)', icon: <Code size={24} />, level: 20 },
+    { name: '.NET (Beginner)', icon: <Code size={24} />, level: 20 },
+    { name: 'SQLite (Beginner)', icon: <Database size={24} />, level: 20 },
+    { name: 'Entity Framework Core (Beginner)', icon: <Database size={24} />, level: 20 },
+    { name: 'N-tier Architecture (Beginner)', icon: <Zap size={24} />, level: 20 },
+    { name: 'Business Logic (Beginner)', icon: <Zap size={24} />, level: 20 },
+    { name: 'UI/UX Design (Beginner)', icon: <Zap size={24} />, level: 20 },
+    { name: 'Reporting & Analytics (Beginner)', icon: <Database size={24} />, level: 20 }
   ]
 
   const experiences = [
