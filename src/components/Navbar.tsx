@@ -4,6 +4,8 @@ import { Menu, X } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
 import ThemePicker from './ThemePicker'
 import { useTranslation } from 'react-i18next'
+import { AiOutlineFontSize } from 'react-icons/ai'
+import { FaFont } from 'react-icons/fa'
 
 const Navbar = () => {
   const { i18n } = useTranslation()
@@ -11,6 +13,8 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false)
   const lastScrollY = useRef(window.scrollY)
   const location = useLocation()
+  const [largeText, setLargeText] = useState(false)
+  const [dyslexiaFont, setDyslexiaFont] = useState(false)
 
   // Hide/show navbar on scroll
   useEffect(() => {
@@ -31,6 +35,16 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    document.body.style.fontSize = largeText ? '1.25rem' : ''
+  }, [largeText])
+
+  useEffect(() => {
+    document.body.style.fontFamily = dyslexiaFont
+      ? '"OpenDyslexic", "Comic Sans MS", Arial, sans-serif'
+      : ''
+  }, [dyslexiaFont])
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -61,6 +75,22 @@ const Navbar = () => {
             <div className="nav-theme-controls">
               <ThemeToggle />
               <ThemePicker />
+              <button
+                aria-label={largeText ? 'Disable large text' : 'Enable large text'}
+                onClick={() => setLargeText(l => !l)}
+                className={`a11y-btn${largeText ? ' active' : ''}`}
+                tabIndex={0}
+              >
+                <AiOutlineFontSize size={20} />
+              </button>
+              <button
+                aria-label={dyslexiaFont ? 'Disable dyslexia-friendly font' : 'Enable dyslexia-friendly font'}
+                onClick={() => setDyslexiaFont(f => !f)}
+                className={`a11y-btn${dyslexiaFont ? ' active' : ''}`}
+                tabIndex={0}
+              >
+                <FaFont size={18} />
+              </button>
             </div>
             <select
               aria-label="Select language"
@@ -78,6 +108,22 @@ const Navbar = () => {
           <div className="nav-theme-controls">
             <ThemeToggle />
             <ThemePicker />
+            <button
+              aria-label={largeText ? 'Disable large text' : 'Enable large text'}
+              onClick={() => setLargeText(l => !l)}
+              className={`a11y-btn${largeText ? ' active' : ''}`}
+              tabIndex={0}
+            >
+              <AiOutlineFontSize size={20} />
+            </button>
+            <button
+              aria-label={dyslexiaFont ? 'Disable dyslexia-friendly font' : 'Enable dyslexia-friendly font'}
+              onClick={() => setDyslexiaFont(f => !f)}
+              className={`a11y-btn${dyslexiaFont ? ' active' : ''}`}
+              tabIndex={0}
+            >
+              <FaFont size={18} />
+            </button>
           </div>
           <select
             aria-label="Select language"
