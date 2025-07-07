@@ -12,7 +12,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Restaurant Order Management System',
+      title: 'Restaurant Order And Management System',
       description: 'A sophisticated desktop application built with C# WinForms that provides a complete solution for restaurant operations management. Features include dine-in/takeout order processing, kitchen dashboard, menu management, payment processing, and comprehensive reporting with SQLite database integration.',
       image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80',
       imageAlt: 'Restaurant Order Management System - Desktop Application',
