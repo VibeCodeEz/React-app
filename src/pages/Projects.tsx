@@ -171,15 +171,15 @@ const Projects = () => {
                       {t('projects.code')}
                     </a>
                     {project.live && (
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        <ExternalLink size={20} />
-                        {t('projects.liveDemo')}
-                      </a>
+                    <a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <ExternalLink size={20} />
+                      {t('projects.liveDemo')}
+                    </a>
                     )}
                   </div>
                 </div>
