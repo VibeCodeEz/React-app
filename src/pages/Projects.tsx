@@ -12,6 +12,18 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: 'Restaurant Order Management System',
+      description: 'A sophisticated desktop application built with C# WinForms that provides a complete solution for restaurant operations management. Features include dine-in/takeout order processing, kitchen dashboard, menu management, payment processing, and comprehensive reporting with SQLite database integration.',
+      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80',
+      imageAlt: 'Restaurant Order Management System - Desktop Application',
+      category: 'desktop',
+      technologies: ['C#', 'WinForms', '.NET 9.0', 'SQLite', 'Entity Framework Core', 'N-tier Architecture'],
+      github: 'https://github.com/VibeCodeEz/resto-management',
+      live: undefined,
+      featured: true
+    },
+    {
+      id: 2,
       title: 'MovieFlix',
       description: t('projects.movieflixDesc'),
       image: 'https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=400&q=80',
@@ -23,7 +35,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 2,
+      id: 3,
       title: 'The Wicked Daze Clothing',
       description: 'A modern, responsive e-commerce website built for "The Wicked Daze Clothing" brand using React, TypeScript, and Vite. Features include responsive design, dark/light theme toggle, interactive product gallery, shopping cart system, size guide integration, and smooth navigation with auto-hiding navbar.',
       image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80',
@@ -35,7 +47,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 3,
+      id: 4,
       title: 'Weather Web App',
       description: t('projects.weatherDesc'),
       image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop&crop=center',
@@ -47,7 +59,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 4,
+      id: 5,
       title: 'Scientific Calculator',
       description: t('projects.calcDesc'),
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&crop=center',
@@ -59,7 +71,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 5,
+      id: 6,
       title: 'Portfolio Website',
       description: t('projects.portfolioDesc'),
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&crop=center',
@@ -75,6 +87,7 @@ const Projects = () => {
   const categories = [
     { id: 'all', label: t('projects.all') },
     { id: 'frontend', label: t('projects.frontend') },
+    { id: 'desktop', label: 'Desktop Applications' },
     { id: 'fullstack', label: t('projects.fullstack') }
   ]
 
@@ -157,15 +170,17 @@ const Projects = () => {
                       <Github size={20} />
                       {t('projects.code')}
                     </a>
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <ExternalLink size={20} />
-                      {t('projects.liveDemo')}
-                    </a>
+                    {project.live && (
+                      <a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <ExternalLink size={20} />
+                        {t('projects.liveDemo')}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
